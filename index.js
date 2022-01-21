@@ -4,7 +4,6 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const aws = require('aws-sdk');
 
 let user = process.env.USER;
 let pass = process.env.PASS;
@@ -89,7 +88,7 @@ router.route('/lulz/:lulz_id')
         });
     })
 
-    .deleteOne((req, res) => {
+    .delete((req, res) => {
         Lulz.remove({
             _id: req.params.lulz_id
         }, (err, lulz) => {
