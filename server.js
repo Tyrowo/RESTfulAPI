@@ -9,8 +9,6 @@ const bodyParser = require('body-parser');
 let user = process.env.USER;
 let pass = process.env.PASS;
 let databaseLink = process.env.URI;
-console.log(process.env.USER);
-console.log(user, pass, databaseLink);
 
 //configuratinos to make app use bodyparser
 app.use(bodyParser.urlencoded({ extended: true }))
