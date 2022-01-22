@@ -1,3 +1,4 @@
+console.log('start');
 //~~~~~~~~~~~~~~~~~~~
 // Base Setup
 // ~~~~~~~~~~~~~~~~~~
@@ -8,6 +9,8 @@ const bodyParser = require('body-parser');
 let user = process.env.USER;
 let pass = process.env.PASS;
 let databaseLink = process.env.URI;
+console.log(process.env.USER);
+console.log(user, pass, databaseLink);
 
 //configuratinos to make app use bodyparser
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -25,6 +28,7 @@ const Lulz = require('./lulzModel');
 //~~~~~~~~~~~~~~~~~~~~
 // API Routes 
 //~~~~~~~~~~~~~~~~~~~~
+console.log('api routes');
 const router = express.Router(); //creates instance of express router
 
 //middleware for all requests
@@ -100,5 +104,6 @@ router.route('/lulz/:lulz_id')
 //~~~~~~~~~~~~~~~~~~~~
 // starting the server
 //~~~~~~~~~~~~~~~~~~~~
+console.log('starting the server');
 app.listen(port);
 console.log(`we're working on port ${port}.`);
